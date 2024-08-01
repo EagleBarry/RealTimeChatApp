@@ -1,6 +1,39 @@
-<form>
+<!-- <form>
   <input id="messageInput" type="text" placeholder="Your message" />
   <button>Send</button>
 </form>
 <ul></ul>
 <p id="activity"></p>
+
+<form>
+  <ul>
+    <li *ngFor="let m of messages">{{ m }}</li>
+  </ul>
+  <input
+    id="messageInput"
+    name="message"
+    (keydown.enter)="sendMessage()"
+    type="text"
+  />
+  <button (click)="sendMessage()">Send</button>
+</form> -->
+
+<div class="chat-container">
+  <div class="messages">
+    <div *ngFor="let message of messages" class="message">
+      {{ message }}
+    </div>
+  </div>
+  <input (keyup.enter)="sendMessage()" placeholder="Type a message" />
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+<!-- <div>
+  <input
+    [(ngModel)]="message"
+    (keyup.enter)="sendMessage()"
+    placeholder="Type your message..."
+  />
+  <button (click)="sendMessage()">Send</button>
+  <div *ngFor="let msg of messages">{{ msg }}</div>
+</div> -->
